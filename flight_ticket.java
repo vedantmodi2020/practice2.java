@@ -58,7 +58,7 @@ public class flight_ticket {
             {
                 if(code_check.equals(array[i].code))
                 {
-                    System.out.println("\n*****Thank You for Using MakeMyTrip*****\n");
+                    System.out.println("\n*****Thank You for Using Online Tickt Booking*****\n");
                     System.out.println("The details for your flight are: ");
                     array[i].get_flight_details();
                     flag=1;

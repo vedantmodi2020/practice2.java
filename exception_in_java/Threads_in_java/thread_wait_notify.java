@@ -1,5 +1,7 @@
 package exception_in_java.Threads_in_java;
 
+import java.util.Scanner;
+
 public class thread_wait_notify  {
     public static void main(String[] args) throws InterruptedException {
         account4 a1 = new account4(2000);
@@ -9,7 +11,6 @@ public class thread_wait_notify  {
                 try {
                     a1.withdraw(30000);
                 } catch (InterruptedException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             }
@@ -38,6 +39,7 @@ public class thread_wait_notify  {
         });
         thr1.start();
         thr2.start();
+        
         thr3.start();
         thr1.join();
         thr2.join();
@@ -54,11 +56,13 @@ class account4
         this.balance = balance;
     }
     public synchronized void withdraw(int withdraw1) throws InterruptedException {
-        System.out.println("this is Withdrawl " + Thread.currentThread().getId());
-        while (withdraw1>this.balance) 
+        System.out.println("How are you " + Thread.currentThread().getId());
+        boolean x = true;
+        while(withdraw1>this.balance) 
         {
-            wait();
+            
             System.out.println("Thread is waiting");
+            wait();
         }
         System.out.println("withdrawl happening " + Thread.currentThread().getId());
         this.balance = this.balance - withdraw1;

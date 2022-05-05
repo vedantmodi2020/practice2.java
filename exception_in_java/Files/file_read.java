@@ -9,10 +9,13 @@ public class file_read {
         try {
             File obj = new File("exapmle.txt");
             Scanner input = new Scanner(obj);
+            int x =0;
             while(input.hasNextLine()){
                 String data = input.nextLine();
                 System.out.println(data);
+                x++;
             }
+            System.out.println(x);
             input.close();
         } catch (FileNotFoundException e) {
             System.out.println("File is not found in the system");

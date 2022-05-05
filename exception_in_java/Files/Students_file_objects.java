@@ -18,7 +18,7 @@ public class Students_file_objects {
             array[1] = s2;
             array[2] = s3;
             array[3] = s4;
-            FileOutputStream fout = new FileOutputStream("Student.txt");
+            FileOutputStream fout = new FileOutputStream("Student1.txt");
             ObjectOutputStream out = new ObjectOutputStream(fout);
             for (student1211 k : array) {
                 out.writeObject(k);
